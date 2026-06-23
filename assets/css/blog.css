@@ -1,0 +1,936 @@
+/* ============================================
+   کافه آرا — استایل وبلاگ و مقاله
+   blog.css
+   ============================================ */
+
+/* ══════════════════════════════════════
+   صفحه لیست وبلاگ
+══════════════════════════════════════ */
+.blog-section { background: var(--cream); }
+
+.blog-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ── کنترل‌ها ── */
+.blog-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.bs-search {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.bs-icon {
+  position: absolute;
+  right: 14px;
+  font-size: 1rem;
+  pointer-events: none;
+}
+#blogSearch {
+  width: 100%;
+  padding: 11px 42px 11px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-full);
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.875rem;
+  background: var(--white);
+  color: var(--text);
+  outline: none;
+  direction: rtl;
+  transition: var(--transition);
+}
+#blogSearch:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,146,42,0.1); }
+#blogSearch::placeholder { color: var(--muted-light); }
+.bs-sort select {
+  padding: 11px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-full);
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.83rem;
+  color: var(--muted);
+  background: var(--white);
+  outline: none;
+  cursor: pointer;
+  direction: rtl;
+  transition: var(--transition);
+}
+.bs-sort select:focus { border-color: var(--gold); }
+
+/* ── تب دسته‌بندی ── */
+.blog-cats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.bc-tab {
+  padding: 9px 20px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.bc-tab:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-faint); }
+.bc-tab.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(200,146,42,0.3);
+}
+
+/* ── مقاله ویژه ── */
+.featured-post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: 28px;
+  background: var(--white);
+  transition: var(--transition);
+}
+.featured-post:hover {
+  border-color: rgba(200,146,42,0.4);
+  box-shadow: 0 12px 40px rgba(200,146,42,0.1);
+  transform: translateY(-3px);
+}
+.fp-img {
+  height: 100%;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  transition: transform 0.4s ease;
+}
+.featured-post:hover .fp-img { transform: scale(1.04); }
+.fi-1 { background: linear-gradient(145deg, #2d1505, #6b3a12); }
+
+.fp-body { padding: 32px; display: flex; flex-direction: column; justify-content: space-between; }
+.fp-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.fp-cat {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.fp-date, .fp-read {
+  font-size: 0.75rem;
+  color: var(--muted-light);
+}
+.fp-title {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--dark);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+.fp-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.85;
+  font-weight: 300;
+  margin-bottom: 20px;
+  flex: 1;
+}
+.fp-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.fp-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.fpa-ava {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+/* ── گرید مقالات ── */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+  margin-bottom: 32px;
+}
+.post-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.post-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(200,146,42,0.4);
+  box-shadow: 0 12px 32px rgba(200,146,42,0.1);
+}
+.pc-img-wrap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.pc-img {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  transition: transform 0.4s ease;
+}
+.post-card:hover .pc-img { transform: scale(1.06); }
+.pi-1 { background: linear-gradient(145deg, #1a0d0d, #4a1e1e); }
+.pi-2 { background: linear-gradient(145deg, #0d2a14, #1e6b35); }
+.pi-3 { background: linear-gradient(145deg, #1a1a2a, #3a3a6b); }
+.pi-4 { background: linear-gradient(145deg, #2a1e05, #6b4e10); }
+.pi-5 { background: linear-gradient(145deg, #2d2005, #6b5012); }
+.pi-6 { background: linear-gradient(145deg, #0d1a2a, #1a3d5c); }
+
+.pc-cat {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: rgba(0,0,0,0.55);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(4px);
+}
+.pc-body { padding: 18px; }
+.pc-meta {
+  display: flex;
+  gap: 10px;
+  font-size: 0.72rem;
+  color: var(--muted-light);
+  margin-bottom: 8px;
+}
+.pc-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.5;
+  margin-bottom: 8px;
+  transition: var(--transition);
+}
+.post-card:hover .pc-title { color: var(--gold); }
+.pc-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 14px;
+}
+.pc-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.pc-author {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.pca-ava {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.pc-likes {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+}
+.pc-likes:hover { color: #e44; border-color: rgba(228,68,68,0.2); background: rgba(228,68,68,0.05); }
+.pc-likes.liked { color: #e44; }
+
+/* پیام خالی */
+.blog-empty {
+  text-align: center;
+  padding: 64px 24px;
+}
+.be-icon { font-size: 3rem; margin-bottom: 14px; }
+.be-title { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+.be-desc { font-size: 0.875rem; color: var(--muted); font-weight: 300; }
+
+/* پیجینیشن */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+.pg-btn {
+  width: 40px; height: 40px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  color: var(--muted);
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pg-btn:hover:not(:disabled) { border-color: var(--gold); color: var(--gold); }
+.pg-btn.active { background: var(--gold); border-color: var(--gold); color: var(--white); }
+.pg-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.pg-dots { color: var(--muted-light); font-size: 1rem; }
+
+/* ══════════════════════════════════════
+   سایدبار مشترک
+══════════════════════════════════════ */
+.blog-sidebar,
+.single-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: sticky;
+  top: calc(var(--nav-h) + 20px);
+}
+.sb-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+.sb-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+  position: relative;
+}
+.sb-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; right: 0;
+  width: 28px; height: 2px;
+  background: var(--gold);
+}
+
+/* جستجوی سایدبار */
+.sb-search {
+  display: flex;
+  gap: 8px;
+}
+.sb-search input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.83rem;
+  outline: none;
+  direction: rtl;
+  transition: var(--transition);
+}
+.sb-search input:focus { border-color: var(--gold); }
+.sb-search button {
+  width: 40px; height: 40px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  background: var(--gold-faint);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+.sb-search button:hover { background: var(--gold); }
+
+/* دسته‌بندی سایدبار */
+.sb-cats { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.sb-cats a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.83rem;
+  color: var(--muted);
+  transition: var(--transition);
+}
+.sb-cats a:hover { background: var(--gold-faint); color: var(--gold); }
+.sc-count {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* محبوب‌ترین */
+.popular-posts { display: flex; flex-direction: column; gap: 12px; }
+.pp-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+.pp-item:hover { background: var(--cream); }
+.pp-img {
+  width: 52px; height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+.pp-i1 { background: linear-gradient(135deg, #2a1e05, #6b4e10); }
+.pp-i2 { background: linear-gradient(135deg, #1a1a2a, #3a3a6b); }
+.pp-i3 { background: linear-gradient(135deg, #0d2a14, #1e6b35); }
+.pp-title { font-size: 0.8rem; font-weight: 600; color: var(--dark); line-height: 1.45; margin-bottom: 4px; }
+.pp-meta { font-size: 0.7rem; color: var(--muted-light); }
+
+/* تگ‌ها */
+.tags-cloud { display: flex; flex-wrap: wrap; gap: 7px; }
+.tag {
+  display: inline-block;
+  padding: 5px 13px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  transition: var(--transition);
+}
+.tag:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-faint); }
+
+/* خبرنامه */
+.sb-newsletter {
+  background: var(--dark);
+  border-color: rgba(255,255,255,0.08);
+  text-align: center;
+}
+.sbn-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+.sb-newsletter h3 { color: var(--white); font-size: 0.95rem; margin-bottom: 6px; }
+.sb-newsletter p { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-bottom: 14px; font-weight: 300; }
+.sb-newsletter input {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.07);
+  color: var(--white);
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.83rem;
+  outline: none;
+  text-align: center;
+  transition: var(--transition);
+}
+.sb-newsletter input::placeholder { color: rgba(255,255,255,0.3); }
+.sb-newsletter input:focus { border-color: var(--gold); }
+
+/* ══════════════════════════════════════
+   صفحه مقاله تکی
+══════════════════════════════════════ */
+
+/* هدر مقاله */
+.single-hero {
+  background: var(--dark);
+  padding: calc(var(--nav-h) + 56px) 48px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.sh-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 40% 60%, rgba(200,146,42,0.14), transparent 60%);
+}
+.sh-content { position: relative; z-index: 1; max-width: 760px; }
+.sh-cat {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 12px 0;
+}
+.sh-title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.sh-title span { color: var(--gold); }
+.sh-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.sh-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sha-ava {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+  border: 2px solid rgba(200,146,42,0.4);
+  flex-shrink: 0;
+}
+.sha-name { font-size: 0.9rem; font-weight: 700; color: var(--white); }
+.sha-role { font-size: 0.72rem; color: rgba(255,255,255,0.45); }
+.sh-stats {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+}
+.sh-like {
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: var(--transition);
+}
+.sh-like:hover { border-color: #e44; color: #e44; }
+.sh-like.liked { color: #e44; border-color: rgba(228,68,68,0.3); }
+
+/* تصویر کاور */
+.single-cover {
+  max-width: 860px;
+  margin: -32px auto 0;
+  padding: 0 48px;
+  position: relative;
+  z-index: 2;
+}
+.sc-img {
+  height: 360px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(145deg, #2d1505, #7a4010);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7rem;
+  box-shadow: var(--shadow-dark);
+}
+
+/* لایه‌بندی مقاله */
+.single-section { background: var(--cream); padding-top: 48px; }
+.single-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* متن مقاله */
+.article-body { min-width: 0; }
+
+.article-lead {
+  font-size: 1.05rem;
+  color: var(--brown);
+  line-height: 1.9;
+  font-weight: 500;
+  padding: 20px 24px;
+  border-right: 4px solid var(--gold);
+  background: var(--light);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-bottom: 28px;
+}
+
+.article-body h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--dark);
+  margin: 32px 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+  position: relative;
+}
+.article-body h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; right: 0;
+  width: 40px; height: 2px;
+  background: var(--gold);
+}
+.article-body p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.95;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+/* بلوک اطلاعات */
+.info-block {
+  display: flex;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: var(--radius-lg);
+  margin: 24px 0;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+.info-gold { background: rgba(200,146,42,0.08); border: 1.5px solid rgba(200,146,42,0.2); color: var(--brown); }
+.info-brown { background: rgba(92,61,30,0.07); border: 1.5px solid rgba(92,61,30,0.15); color: var(--brown); }
+.ib-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+
+/* مراحل */
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 24px 0;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.ps-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  transition: var(--transition);
+}
+.ps-item:last-child { border-bottom: none; }
+.ps-item:hover { background: var(--gold-faint); }
+.ps-num {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.ps-title { font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 5px; }
+.ps-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.75; font-weight: 300; margin: 0; }
+
+/* گرید منشأها */
+.origins-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+.og-item {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  transition: var(--transition);
+}
+.og-item:hover { border-color: rgba(200,146,42,0.4); transform: translateY(-2px); }
+.og-flag { font-size: 1.8rem; margin-bottom: 8px; }
+.og-name { font-size: 0.9rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+.og-flavor { font-size: 0.75rem; color: var(--gold); font-weight: 600; margin-bottom: 6px; }
+.og-notes { font-size: 0.75rem; color: var(--muted); font-weight: 300; line-height: 1.5; }
+
+/* تگ‌های مقاله */
+.article-tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 28px 0;
+  padding-top: 20px;
+  border-top: 1.5px solid var(--border);
+}
+.at-label { font-size: 0.8rem; font-weight: 700; color: var(--muted); }
+
+/* اشتراک‌گذاری */
+.share-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.share-top { margin-bottom: 24px; }
+.share-bottom { margin-top: 4px; margin-bottom: 28px; }
+.sb-label { font-size: 0.8rem; font-weight: 700; color: var(--muted); margin-left: 4px; }
+.sh-btn {
+  padding: 7px 16px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--border);
+  background: var(--cream);
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.sh-btn:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-faint); }
+.sh-telegram:hover  { border-color: #0088cc; color: #0088cc; background: #f0f8ff; }
+.sh-whatsapp:hover  { border-color: #25d366; color: #25d366; background: #f0fff5; }
+
+/* نویسنده */
+.author-card {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: var(--light);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-xl);
+  margin-bottom: 36px;
+}
+.ac-ava {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  flex-shrink: 0;
+  border: 3px solid rgba(200,146,42,0.25);
+}
+.ac-name { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 3px; }
+.ac-role { font-size: 0.76rem; color: var(--gold); font-weight: 600; margin-bottom: 10px; }
+.ac-bio { font-size: 0.82rem; color: var(--muted); line-height: 1.75; font-weight: 300; margin-bottom: 12px; }
+.ac-social { display: flex; gap: 8px; }
+
+/* نظرات */
+.comments-section { margin-top: 8px; }
+.cs-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+.comments-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+.comment-item {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+}
+.comment-item:hover { border-color: rgba(200,146,42,0.25); }
+.ci-ava {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+  flex-shrink: 0;
+}
+.ci-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 7px;
+}
+.ci-name { font-size: 0.875rem; font-weight: 700; color: var(--dark); }
+.ci-date { font-size: 0.72rem; color: var(--muted-light); }
+.ci-text { font-size: 0.83rem; color: var(--muted); line-height: 1.75; font-weight: 300; margin-bottom: 10px; }
+.ci-like {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 4px 12px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: 'Vazirmatn', sans-serif;
+  transition: var(--transition);
+}
+.ci-like:hover { border-color: #e44; color: #e44; }
+.ci-like.liked { color: #e44; border-color: rgba(228,68,68,0.3); }
+
+/* فرم نظر */
+.comment-form {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+}
+.comment-form h4 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 18px; }
+.cfg { margin-bottom: 14px; }
+.cfg input, .cfg textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.875rem;
+  color: var(--text);
+  background: var(--cream);
+  outline: none;
+  direction: rtl;
+  transition: var(--transition);
+}
+.cfg input:focus, .cfg textarea:focus {
+  border-color: var(--gold);
+  background: var(--white);
+}
+.cfg textarea { resize: vertical; }
+
+/* فهرست مطالب */
+.sb-toc { position: sticky; top: calc(var(--nav-h) + 20px); }
+.toc-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.toc-link {
+  display: block;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  color: var(--muted);
+  border-right: 2px solid transparent;
+  transition: var(--transition);
+}
+.toc-link:hover { color: var(--gold); background: var(--gold-faint); }
+.toc-link.active {
+  color: var(--gold);
+  border-right-color: var(--gold);
+  background: var(--gold-faint);
+  font-weight: 600;
+}
+
+/* مرتبط */
+.related-posts { display: flex; flex-direction: column; gap: 10px; }
+.rp-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+.rp-item:hover { background: var(--cream); }
+.rp-img {
+  width: 50px; height: 50px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.rpi-1 { background: linear-gradient(135deg, #1a1a2a, #3a3a6b); }
+.rpi-2 { background: linear-gradient(135deg, #1a0d0d, #4a1e1e); }
+.rpi-3 { background: linear-gradient(135deg, #0d2a14, #1e6b35); }
+.rp-title { font-size: 0.78rem; font-weight: 600; color: var(--dark); line-height: 1.45; margin-bottom: 3px; transition: var(--transition); }
+.rp-item:hover .rp-title { color: var(--gold); }
+.rp-meta { font-size: 0.68rem; color: var(--muted-light); }
+
+/* پیشنهاد منو */
+.sms-desc { font-size: 0.78rem; color: var(--muted); margin-bottom: 12px; font-weight: 300; }
+.sms-items { display: flex; flex-direction: column; gap: 10px; }
+.sms-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: var(--cream);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+.sms-emoji { font-size: 1.5rem; flex-shrink: 0; }
+.sms-name { font-size: 0.78rem; font-weight: 600; color: var(--dark); margin-bottom: 2px; }
+.sms-price { font-size: 0.7rem; color: var(--gold); font-weight: 700; }
+.sms-item .btn { flex-shrink: 0; white-space: nowrap; }
+
+/* ══════════════════════════════════════
+   ریسپانسیو
+══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .blog-layout,
+  .single-layout { grid-template-columns: 1fr; }
+  .blog-sidebar,
+  .single-sidebar { position: static; }
+  .sb-toc { position: static; }
+  .featured-post { grid-template-columns: 1fr; }
+  .fp-img { min-height: 200px; }
+}
+@media (max-width: 768px) {
+  .single-hero { padding: calc(var(--nav-h) + 32px) 20px 36px; }
+  .single-cover { padding: 0 20px; }
+  .sc-img { height: 220px; font-size: 5rem; }
+  .sh-meta { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .origins-grid { grid-template-columns: 1fr; }
+  .posts-grid { grid-template-columns: 1fr; }
+  .blog-controls { flex-direction: column; }
+  .comment-form .cf-row-2 { grid-template-columns: 1fr !important; }
+}

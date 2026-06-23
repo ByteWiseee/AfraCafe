@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="منوی کامل کافه آرا — نوشیدنی، صبحانه، غذای اصلی و دسر">
+  <title>کافه آرا | منو</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/menu.css">
+</head>
+<body>
+
+  <!-- ══ ناوبار ══ -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">کافه <span>آرا</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">خانه</a></li>
+      <li><a href="about.html">درباره ما</a></li>
+      <li><a href="menu.html" class="active">منو</a></li>
+      <li><a href="blog.html">وبلاگ</a></li>
+      <li><a href="contact.html">تماس</a></li>
+      <li><a href="reservation.html" class="nav-cta">رزرو میز</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="منو" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-mobile">
+    <a href="index.html">خانه</a>
+    <a href="about.html">درباره ما</a>
+    <a href="menu.html" class="active">منو</a>
+    <a href="blog.html">وبلاگ</a>
+    <a href="contact.html">تماس</a>
+    <a href="reservation.html">رزرو میز</a>
+  </div>
+
+  <main>
+
+    <!-- ══ هدر صفحه ══ -->
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <div class="badge">✦ منوی کامل ✦</div>
+        <h1>هر چیزی که <span>دوست داری</span></h1>
+        <p>از صبحانه تا شام، از قهوه تا دسر — همه چیز با عشق آماده می‌شود.</p>
+        <div class="breadcrumb">
+          <a href="index.html">خانه</a>
+          <i>←</i>
+          <span>منو</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ منو + سبد خرید ══ -->
+    <section class="section menu-section">
+      <div class="menu-layout">
+
+        <!-- ستون چپ: منو -->
+        <div class="menu-main">
+
+          <!-- سرچ + فیلتر -->
+          <div class="menu-controls" data-reveal>
+            <div class="search-box">
+              <span class="search-icon">🔍</span>
+              <input id="menuSearch" type="text" placeholder="جستجو در منو...">
+            </div>
+            <div class="sort-box">
+              <select id="menuSort">
+                <option value="default">مرتب‌سازی</option>
+                <option value="price-asc">ارزان‌ترین</option>
+                <option value="price-desc">گران‌ترین</option>
+                <option value="name">الفبایی</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- تب دسته‌بندی -->
+          <div class="cat-tabs" data-reveal data-delay="80">
+            <button class="cat-tab active" data-cat="all">
+              <span class="ct-icon">🍽️</span>همه
+            </button>
+            <button class="cat-tab" data-cat="drink">
+              <span class="ct-icon">☕</span>نوشیدنی
+            </button>
+            <button class="cat-tab" data-cat="breakfast">
+              <span class="ct-icon">🥐</span>صبحانه
+            </button>
+            <button class="cat-tab" data-cat="main">
+              <span class="ct-icon">🍝</span>غذای اصلی
+            </button>
+            <button class="cat-tab" data-cat="dessert">
+              <span class="ct-icon">🍰</span>دسر
+            </button>
+            <button class="cat-tab" data-cat="special">
+              <span class="ct-icon">⭐</span>ویژه‌ها
+            </button>
+          </div>
+
+          <!-- عنوان دسته -->
+          <div class="cat-header" data-reveal data-delay="100">
+            <h2 id="catTitle">همه آیتم‌ها</h2>
+            <span id="catCount" class="cat-count">۱۶ آیتم</span>
+          </div>
+
+          <!-- گرید آیتم‌ها -->
+          <div class="items-grid" id="itemsGrid">
+
+            <!-- ── نوشیدنی ── -->
+            <div class="menu-item" data-cat="drink" data-price="45000" data-name="اسپرسو دوپیو" data-reveal>
+              <div class="mi-img mi-c1">☕</div>
+              <div class="mi-body">
+                <div class="mi-top">
+                  <div>
+                    <div class="mi-badges">
+                      <span class="badge badge-gold">پرطرفدار</span>
+                    </div>
+                    <div class="mi-name">اسپرسو دوپیو</div>
+                    <div class="mi-desc">دو شات اسپرسو تازه با دانه‌های اتیوپی اعلا — تلخ، غنی و بی‌نقص.</div>
+                    <div class="mi-tags"><span>🌱 وگان</span><span>⚡ کافئین بالا</span></div>
+                  </div>
+                </div>
+                <div class="mi-footer">
+                  <div class="mi-price">۴۵,۰۰۰ <small>تومان</small></div>
+                  <button class="mi-btn" data-name="اسپرسو دوپیو" data-price="45000">
+                    <span class="mi-btn-icon">+</span> افزودن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-item" data-cat="drink" data-price="75000" data-name="ماچا لاته" data-reveal data-delay="60">
+              <div class="mi-img mi-c2">🍵</div>
+              <div class="mi-body">
+                <div class="mi-top">
+                  <div>
+                    <div class="mi-badges"><span class="badge badge-green">گیاهی</span></div>
+                    <div class="mi-name">ماچا لاته</div>
+                    <div class="mi-desc">ماچای ژاپنی اعلا با شیر بادام گرم و کف ظریف — آرامش در هر جرعه.</div>
+                    <div class="mi-tags"><span>🌿 ارگانیک</span><span>🥛 شیر بادام</span></div>
+                  </div>
+                </div>
+                <div class="mi-footer">
+                  <div class="mi-price">۷۵,۰۰۰ <small>تومان</small></div>
+                  <button class="mi-btn" data-name="ماچا لاته" data-price="75000">
+                    <span class="mi-btn-icon">+</span> افزودن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-item" data-cat="drink" data-price="85000" data-name="آیس لاته دارچین" data-reveal data-delay="120">
+              <div class="mi-img mi-c3">🧊</div>
+              <div class="mi-body">
+                <div class="mi-top">
+                  <div>
+                    <div class="mi-badges"><span class="badge badge-green">جدید</span></div>
+                    <div class="mi-name">آیس لاته دارچین</div>
+                    <div class="mi-desc">اسپرسو سرد با شیر پرچرب، یخ و شیره دارچین طبیعی روی آن.</div>
+                    <div class="mi-tags"><span>❄️ سرد</span><span>🍂 دارچین</span></div>
+                  </div>
+                </div>
+                <div class="mi-footer">
+                  <div class="mi-price">۸۵,۰۰۰ <small>تومان</small></div>
+                  <button class="mi-btn" data-name="آیس لاته دارچین" data-price="85000">
+                    <span class="mi-btn-icon">+</span> افزودن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-item" data-cat="drink" data-price="65000" data-name="کاپوچینو کلاسیک" data-reveal data-delay="180">
+              <div class="mi-img mi-c4">🫧</div>
+              <div class="mi-body">
+                <div class="mi-top">
+                  <div>
+                    <div class="mi-name">کاپوچینو کلاسیک</div>
+                    <div class="mi-desc">اسپرسو با شیر بخارپز و کف خامه‌ای — تعادل بی‌نقص ایتالیایی.</div>
+                    <div class="mi-tags"><span>🇮🇹 ایتالیایی</span><span>☁️ کف دار</span></div>
+                  </div>
+                </div>
+                <div class="mi-footer">
+                  <div class="mi-price">۶۵,۰۰۰ <small>تومان</small></div>
+                  <button class="mi-btn" data-name="کاپوچینو کلاسیک" data-price="65000">
+                    <span class="mi-btn-icon">+</span> افزودن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── صبحانه ── -->
+            <div class="menu-item" data-cat="breakfast" data-price="65000" data-name="کروسان کره‌ای" data-reveal>
+              <div class="mi-img mi-c5">🥐</div>
+              <div class="mi-body">
+                <div class="mi-top">
+                  <div>
+                    <div class="mi-name">کروسان کره‌ای</div>
+                    <div class="mi-desc">کروسان تازه فرانسوی با کره محلی، جم توت‌فرنگی و پنیر خامه‌ای.</div>
+                    <div class="mi-tags"><span>🇫🇷 فرانسوی</span><span>🧈 کره محلی</span></div>
+                  </div>
+                </div>
+                <div class="mi-footer">
+                  <div class="mi-price">۶۵,۰۰۰ <small>تومان</small></div>
+                  <button class="mi-btn" data-name="کروسان کره‌ای" data-price="65000">
+                    <span class="mi-btn-icon">+</span> افزودن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-item" data-cat="breakfast" data-price="145000" data-name="صبحانه انگلیسی" data-reveal data-delay="60">
+              <div class="mi-img mi-c6">🍳</div>
+              <div class="mi-body">
+                <div class="mi-top">
+                  <div>
+                    <div class="mi-badges"><span class="badge badge-gold">پرطرفدار</span></div>
+                    <div class="mi-name">صبحانه انگلیسی</div>
+                    <div class="mi-desc">تخم‌مرغ همزده، سوسیس، لوبیا پخته، نان تست و گوجه کبابی.</div>
+                    <div class="mi-tags"><span>🥚 تخم‌مرغ</span><span>🍞 نان تست</span></div>
+                  </div>
+                </div>
+                <div class="mi-footer">
+                  <div class="mi-price">۱۴۵,۰۰۰ <small>تومان</small></div>
+                  <button class="mi-btn" data-name="صبحانه انگلیسی" data-price="145000">
+                    <span class="mi-btn-icon">+</span> افزودن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-item" data-cat="breakfast" data-price="95000" data-name="پن‌کیک موز و عسل" data-reveal data-delay="120">
+              <div class="mi-img mi-c7">🥞</div>
+              <div class="mi-body">
+                <div class="mi-top">
+                  <div>
+                    <div class="mi-badges"><span class="badge badge-green">جدید</span></div>
+                    <div class="mi-name">پن‌کیک موز و عسل</div>
+                    <div class="mi-desc">پن‌کیک نرم و پفکی با برش‌های موز تازه، شربت افرا و عسل طبیعی.</div>
+                    <div class="mi-tags"><span>🍌 موز</span><span>🍯 عسل طبیعی</span></div>
+                  </div>
+                </div>
+                <div class="mi-footer">
+                  <div class="mi-price">۹۵,۰۰۰ <small>تومان</small></div>
+                  <button class="mi-btn" data-name="پن‌کیک موز و عسل" data-price="95000">
+                    <span class="mi-btn-icon">+</span> افزودن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── غذای اصلی ── -->
+            <div class="menu-item" data-cat="main" data-price="185000" data-name="پاستا آلفردو" data-reveal>
+              <div class="mi-img mi-c8">🍝</div>
+              <div class="mi-body">
+                <div class="mi-top">
+                  <div>
+                    <div class="mi-badges"><span class="badge badge-green">جدید</span></div>
+                    <div class="mi-name">پاستا آلفردو</div>
+                    <div class="mi-desc">پاستا تازه با سس خامه‌ای غنی، قارچ پورتابلو و پارمزان اصل ایتالیایی.</div>
+                    <div class="mi-tags"><span>🇮🇹 ایتالیایی</span><span>🧀 پارمزان</span></div>
+                  </div>
+                </div>
+                <div class="mi-footer">
+                  <div class="mi-price">۱۸۵,۰۰۰ <small>تومان</small></div>
+                  <button class="mi-btn" data-name="پاستا آلفردو" data-price="185000">
+                    <span class="mi-btn-icon">+</span> افزودن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-item" data-cat="main" data-price="115000" data-name="سالاد سزار" data-reveal data-delay="60">
+              <div class="mi-img mi-c9">🥗</div>
+              <div class="mi-body">
+                <div class="mi-top">
+                  <div>
+                    <div class="mi-name">سالاد سزار</div>
+                    <div class="mi-desc">کاهو رومانو تازه، کروتون برشته، پارمزان و سس سزار خانگی.</div>
+                    <div class="mi-tags"><span>🌱 سالم</span><span>🥬 تازه</span></div>
+                  </div>
+                </div>
+                <div class="mi-footer">
+                  <div class="mi-price">۱۱۵,۰۰۰ <small>تومان</small></div>
+                  <button class="mi-btn" data-name="سالاد سزار" data-price="115000">
+                    <span class="mi-btn-icon">+</span> افزودن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-item" data-cat="main" data-price="225000" data-name="برگر آرا اسپشیال" data-reveal data-delay="120">
+              <div class="mi-img mi-c10">🍔</div>
+              <div class="mi-body">
+                <div class="mi-top">
+                  <div>
+                    <div class="mi-badges"><span class="badge badge-gold">پرطرفدار</span></div>
+                    <div class="mi-name">برگر آرا اسپشیال</div>
+                    <div class="mi-desc">گوشت گوساله تازه، پنیر چدار، کاهو، گوجه و سس مخصوص خانگی.</div>
+                    <div class="mi-tags"><span>🥩 گوشت تازه</span><span>🧀 چدار</span></div>
+                  </div>
+                </div>
+                <div class="mi-footer">
+                  <div class="mi-price">۲۲۵,۰۰۰ <small>تومان</small></div>
+                  <button class="mi-btn" data-name="برگر آرا اسپشیال" data-price="225000">
+                    <span class="mi-btn-icon">+</span> افزودن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-item" data-cat="main" data-price="195000" data-name="ریزوتو قارچ" data-reveal data-delay="180">
+              <div class="mi-img mi-c11">🍚</div>
+              <div class="mi-body">
+                <div class="mi-top">
+                  <div>
+                    <div class="mi-name">ریزوتو قارچ</div>
+                    <div class="mi-desc">ریزوتو آربوریو با قارچ پورتابلو، پارمزان و روغن تروفل سیاه.</div>
+                    <div class="mi-tags"><span>🍄 قارچ</span><span>🌟 تروفل</span></div>
+                  </div>
+                </div>
+                <div class="mi-footer">
+                  <div class="mi-price">۱۹۵,۰۰۰ <small>تومان</small></div>
+                  <button class="mi-btn" data-name="ریزوتو قارچ" data-price="195000">
+                    <span class="mi-btn-icon">+</span> افزودن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── دسر ── -->
+            <div class="menu-item" data-cat="dessert" data-price="95000" data-name="چیزکیک نیویورکی" data-reveal>
+              <div class="mi-img mi-c12">🍰</div>
+              <div class="mi-body">
+                <div class="mi-top">
+                  <div>
+                    <div class="mi-badges"><span class="badge badge-gold">پرطرفدار</span></div>
+                    <div class="mi-name">چیزکیک نیویورکی</div>
+                    <div class="mi-desc">چیزکیک کلاسیک با کرم پنیر اصل، پایه بیسکویت و سس توت‌فرنگی.</div>
+                    <div class="mi-tags"><span>🍓 توت‌فرنگی</span><span>🧀 کرم پنیر</span></div>
+                  </div>
+                </div>
+                <div class="mi-footer">
+                  <div class="mi-price">۹۵,۰۰۰ <small>تومان</small></div>
+                  <button class="mi-btn" data-name="چیزکیک نیویورکی" data-price="95000">
+                    <span class="mi-btn-icon">+</span> افزودن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-item" data-cat="dessert" data-price="85000" data-name="موس شکلات تلخ" data-reveal data-delay="60">
+              <div class="mi-img mi-c13">🍫</div>
+              <div class="mi-body">
+                <div class="mi-top">
+                  <div>
+                    <div class="mi-name">موس شکلات تلخ</div>
+                    <div class="mi-desc">موس سبک شکلات ۷۰٪ با برگ نعناع تازه و پودر قهوه روی آن.</div>
+                    <div class="mi-tags"><span>🍫 ۷۰٪ کاکائو</span><span>🌿 نعناع</span></div>
+                  </div>
+                </div>
+                <div class="mi-footer">
+                  <div class="mi-price">۸۵,۰۰۰ <small>تومان</small></div>
+                  <button class="mi-btn" data-name="موس شکلات تلخ" data-price="85000">
+                    <span class="mi-btn-icon">+</span> افزودن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- ── ویژه ── -->
+            <div class="menu-item" data-cat="special" data-price="320000" data-name="ست صبحانه آرا" data-reveal>
+              <div class="mi-img mi-c14">🎁</div>
+              <div class="mi-body">
+                <div class="mi-top">
+                  <div>
+                    <div class="mi-badges">
+                      <span class="badge badge-gold">ویژه</span>
+                      <span class="badge badge-green">۱۵٪ تخفیف</span>
+                    </div>
+                    <div class="mi-name">ست صبحانه آرا</div>
+                    <div class="mi-desc">صبحانه انگلیسی + کروسان + اسپرسو دوپیو — کامل‌ترین شروع روز شما.</div>
+                    <div class="mi-tags"><span>💰 صرفه‌جویی ۴۵ هزار</span><span>⏰ تا ۱۲ ظهر</span></div>
+                  </div>
+                </div>
+                <div class="mi-footer">
+                  <div class="mi-price">۳۲۰,۰۰۰ <small>تومان</small></div>
+                  <button class="mi-btn" data-name="ست صبحانه آرا" data-price="320000">
+                    <span class="mi-btn-icon">+</span> افزودن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-item" data-cat="special" data-price="280000" data-name="ست دو نفره قهوه" data-reveal data-delay="80">
+              <div class="mi-img mi-c15">☕</div>
+              <div class="mi-body">
+                <div class="mi-top">
+                  <div>
+                    <div class="mi-badges">
+                      <span class="badge badge-gold">ویژه</span>
+                    </div>
+                    <div class="mi-name">ست دو نفره قهوه</div>
+                    <div class="mi-desc">دو اسپرسو + دو چیزکیک + دو کروسان — یک تجربه مشترک فراموش‌نشدنی.</div>
+                    <div class="mi-tags"><span>👫 دو نفره</span><span>💕 ایده‌آل</span></div>
+                  </div>
+                </div>
+                <div class="mi-footer">
+                  <div class="mi-price">۲۸۰,۰۰۰ <small>تومان</small></div>
+                  <button class="mi-btn" data-name="ست دو نفره قهوه" data-price="280000">
+                    <span class="mi-btn-icon">+</span> افزودن
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /items-grid -->
+
+          <!-- پیام خالی -->
+          <div class="empty-state" id="emptyState" style="display:none">
+            <div class="es-icon">🔍</div>
+            <div class="es-title">آیتمی یافت نشد</div>
+            <div class="es-desc">دسته‌بندی دیگری را امتحان کنید یا جستجو را تغییر دهید.</div>
+          </div>
+
+        </div><!-- /menu-main -->
+
+        <!-- ستون راست: سبد خرید -->
+        <aside class="cart-sidebar" id="cartSidebar">
+          <div class="cart-header">
+            <h3>🛒 سبد خرید</h3>
+            <span class="cart-count" id="cartCount">۰</span>
+          </div>
+
+          <div class="cart-empty" id="cartEmpty">
+            <div class="ce-icon">🛒</div>
+            <p>سبد شما خالی است</p>
+            <small>آیتم‌های مورد علاقه‌تان را اضافه کنید</small>
+          </div>
+
+          <div class="cart-items" id="cartItems"></div>
+
+          <div class="cart-footer" id="cartFooter" style="display:none">
+            <div class="cf-row">
+              <span>جمع کل</span>
+              <span id="cartSubtotal">۰ تومان</span>
+            </div>
+            <div class="cf-row">
+              <span>تخفیف</span>
+              <span id="cartDiscount" class="cf-green">۰ تومان</span>
+            </div>
+            <div class="cf-divider"></div>
+            <div class="cf-row cf-total">
+              <span>مبلغ نهایی</span>
+              <span id="cartTotal">۰ تومان</span>
+            </div>
+            <div class="coupon-row">
+              <input id="couponInput" type="text" placeholder="کد تخفیف...">
+              <button id="couponBtn" class="btn btn-sm btn-outline">اعمال</button>
+            </div>
+            <a href="reservation.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px">
+              ثبت سفارش ←
+            </a>
+            <button id="clearCart" class="cart-clear">پاک کردن سبد</button>
+          </div>
+        </aside>
+
+      </div><!-- /menu-layout -->
+    </section>
+
+  </main>
+
+  <!-- ══ فوتر ══ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="f-logo">کافه <span>آرا</span></span>
+        <p>جایی که هر لحظه با عطر قهوه تازه و غذای اصیل معنا پیدا می‌کند.</p>
+        <div class="footer-social">
+          <a href="#" class="f-soc">📸</a>
+          <a href="#" class="f-soc">✈️</a>
+          <a href="#" class="f-soc">💬</a>
+          <a href="#" class="f-soc">🐦</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>دسترسی سریع</h4>
+        <ul>
+          <li><a href="index.html">خانه</a></li>
+          <li><a href="about.html">درباره ما</a></li>
+          <li><a href="menu.html">منوی کامل</a></li>
+          <li><a href="reservation.html">رزرو میز</a></li>
+          <li><a href="blog.html">وبلاگ</a></li>
+          <li><a href="contact.html">تماس با ما</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>خدمات</h4>
+        <ul>
+          <li><a href="#">سفارش آنلاین</a></li>
+          <li><a href="#">تحویل درب منزل</a></li>
+          <li><a href="#">مجالس خصوصی</a></li>
+          <li><a href="#">کیترینگ</a></li>
+          <li><a href="#">هدیه کارت</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تماس با ما</h4>
+        <ul>
+          <li><a href="tel:02188123456">۰۲۱-۸۸۱۲۳۴۵۶</a></li>
+          <li><a href="mailto:info@cafeara.ir">info@cafeara.ir</a></li>
+          <li><a href="contact.html">ولیعصر، پلاک ۱۲۳</a></li>
+          <li><a href="contact.html">شعبه نیاوران</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="currentYear">۱۴۰۳</span> کافه آرا — تمامی حقوق محفوظ است</p>
+      <div class="footer-bottom-links">
+        <a href="#">حریم خصوصی</a>
+        <a href="#">قوانین</a>
+        <a href="#">نقشه سایت</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- دکمه سبد موبایل -->
+  <button class="float-btn" id="mobileCartBtn" style="display:none">
+    🛒 سبد خرید <span class="fb-badge" id="mobileCartCount">۰</span>
+  </button>
+
+  <button id="backToTop" style="position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--brown);color:#fff;border:none;font-size:1.1rem;z-index:500;opacity:0;transition:all .3s;box-shadow:var(--shadow-dark)">↑</button>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/menu.js"></script>
+</body>
+</html>

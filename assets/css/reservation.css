@@ -1,0 +1,453 @@
+/* ============================================
+   کافه آرا — استایل صفحه رزرو
+   reservation.css
+   ============================================ */
+
+/* ══════════════════════════════════════
+   نوار مزایا
+══════════════════════════════════════ */
+.perks-band {
+  background: var(--brown);
+  padding: 48px;
+}
+.perks-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+}
+.perk-item {
+  text-align: center;
+  padding: 24px 16px;
+  border-left: 1px solid rgba(255,255,255,0.1);
+  transition: var(--transition);
+}
+.perk-item:last-child { border-left: none; }
+.perk-item:hover { background: rgba(255,255,255,0.06); }
+.pk-icon  { font-size: 1.9rem; display: block; margin-bottom: 10px; }
+.pk-title { font-size: 0.88rem; font-weight: 700; color: var(--white); margin-bottom: 5px; }
+.pk-desc  { font-size: 0.75rem; color: rgba(255,255,255,0.45); line-height: 1.6; font-weight: 300; }
+
+/* ══════════════════════════════════════
+   لایه‌بندی
+══════════════════════════════════════ */
+.res-section { background: var(--cream); }
+
+.res-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ══════════════════════════════════════
+   فرم رزرو
+══════════════════════════════════════ */
+.res-form-wrap {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+}
+.rf-header { margin-bottom: 28px; }
+
+/* ── استپ‌بار ── */
+.steps-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 36px;
+  padding: 20px 24px;
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border);
+}
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+  transition: var(--transition);
+}
+.step-num {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--border);
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+.step-lbl {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted-light);
+  transition: var(--transition);
+}
+.step.active .step-num {
+  background: var(--gold);
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(200,146,42,0.35);
+}
+.step.active .step-lbl { color: var(--gold); }
+.step.done .step-num {
+  background: #2a9d5c;
+  color: var(--white);
+}
+.step.done .step-lbl { color: #2a9d5c; }
+
+.step-line {
+  height: 2px;
+  flex: 0.5;
+  background: var(--border);
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+.step-line.done { background: #2a9d5c; }
+
+/* ── فرم استپ ── */
+.form-step {
+  display: none;
+  animation: fadeStepIn 0.35s ease;
+}
+.form-step.active { display: block; }
+@keyframes fadeStepIn {
+  from { opacity: 0; transform: translateX(16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* فیلدها */
+.fg-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.fg { margin-bottom: 20px; position: relative; }
+.fg label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--brown);
+  margin-bottom: 8px;
+}
+.req { color: var(--gold); }
+
+.fg input, .fg select, .fg textarea {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.875rem;
+  color: var(--text);
+  background: var(--cream);
+  outline: none;
+  direction: rtl;
+  transition: var(--transition);
+}
+.fg input:focus, .fg select:focus, .fg textarea:focus {
+  border-color: var(--gold);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(200,146,42,0.1);
+}
+.fg input.invalid, .fg select.invalid { border-color: #e44; }
+.fg input.valid,   .fg select.valid   { border-color: #2a9d5c; }
+.fg textarea { resize: vertical; min-height: 90px; }
+.fg select { cursor: pointer; }
+.fe {
+  display: block;
+  font-size: 0.72rem;
+  color: #e44;
+  margin-top: 4px;
+  min-height: 14px;
+  font-weight: 500;
+}
+
+/* ── انتخاب مناسبت ── */
+.occasion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.occ-btn {
+  padding: 10px 8px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--cream);
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+.occ-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-faint);
+}
+.occ-btn.active {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(200,146,42,0.3);
+}
+
+/* ── شمارنده نفرات ── */
+.counter-input {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--cream);
+}
+.ci-btn {
+  width: 44px; height: 46px;
+  background: var(--white);
+  border: none;
+  border-left: 1px solid var(--border);
+  font-size: 1.2rem;
+  color: var(--brown);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#guestMinus { border-left: none; border-right: 1px solid var(--border); }
+.ci-btn:hover { background: var(--gold); color: var(--white); }
+
+#guestCount {
+  flex: 1;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+/* ── تایم‌اسلات‌ها ── */
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.ts-btn {
+  padding: 10px 6px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--cream);
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+.ts-btn:hover:not(:disabled) {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-faint);
+}
+.ts-btn.active {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--white);
+}
+.ts-btn.ts-full,
+.ts-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+/* ── تأییدیه ── */
+.confirm-card {
+  background: var(--cream);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.cc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  background: var(--dark);
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+.cc-header span { font-size: 1.2rem; }
+.cc-rows { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.cc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+.cc-row .cc-key { color: var(--muted); font-weight: 400; }
+.cc-row .cc-val { color: var(--dark); font-weight: 700; }
+
+/* چک‌باکس */
+.check-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.83rem;
+  color: var(--muted);
+  user-select: none;
+  line-height: 1.6;
+}
+.check-label input[type="checkbox"] { display: none; }
+.check-box {
+  width: 20px; height: 20px;
+  border: 2px solid var(--border);
+  border-radius: 5px;
+  background: var(--cream);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  margin-top: 2px;
+}
+.check-label input:checked ~ .check-box {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.check-label input:checked ~ .check-box::after {
+  content: '✓';
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.check-label a { color: var(--gold); text-decoration: underline; }
+
+/* دکمه‌های استپ */
+.step-btns {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+}
+.step-btns .step-prev { flex-shrink: 0; }
+.step-btns .step-next,
+.step-btns [type="submit"] { flex: 1; justify-content: center; }
+
+/* ══════════════════════════════════════
+   اطلاعات جانبی
+══════════════════════════════════════ */
+.res-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: calc(var(--nav-h) + 20px);
+}
+.ri-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+}
+.ri-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+  position: relative;
+}
+.ri-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; right: 0;
+  width: 28px; height: 2px;
+  background: var(--gold);
+}
+
+/* ساعات */
+.hours-list { list-style: none; display: flex; flex-direction: column; }
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 0.8rem;
+}
+.hours-list li:last-child { border-bottom: none; }
+.hl-day  { color: var(--muted); font-weight: 400; }
+.hl-time { color: var(--dark);  font-weight: 700; }
+.hl-closed .hl-time,
+.hl-closed span:last-child { color: #e44; font-weight: 700; }
+
+/* قوانین */
+.rules-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.rules-list li {
+  font-size: 0.79rem;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.6;
+  padding-right: 16px;
+  position: relative;
+}
+.rules-list li::before {
+  content: '✦';
+  position: absolute;
+  right: 0;
+  color: var(--gold);
+  font-size: 0.6rem;
+  top: 4px;
+}
+
+/* تماس */
+.ri-contact p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ══════════════════════════════════════
+   ریسپانسیو
+══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .res-layout { grid-template-columns: 1fr; }
+  .res-info { position: static; }
+}
+@media (max-width: 768px) {
+  .perks-band { padding: 32px 20px; }
+  .perks-grid { grid-template-columns: repeat(2, 1fr); }
+  .perk-item:nth-child(5) { grid-column: span 2; border-left: none; }
+  .res-form-wrap { padding: 24px; }
+  .fg-row-2 { grid-template-columns: 1fr; }
+  .time-slots { grid-template-columns: repeat(3, 1fr); }
+  .occasion-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-bar { padding: 16px; }
+  .step-lbl { display: none; }
+}
+@media (max-width: 480px) {
+  .time-slots { grid-template-columns: repeat(2, 1fr); }
+  .perks-grid { grid-template-columns: 1fr; }
+  .perk-item { border-left: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+}

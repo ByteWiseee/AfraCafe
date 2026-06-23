@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="وبلاگ کافه آرا — مقالات قهوه، دستور پخت و سبک زندگی">
+  <title>کافه آرا | وبلاگ</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/blog.css">
+</head>
+<body>
+
+  <!-- ══ ناوبار ══ -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">کافه <span>آرا</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">خانه</a></li>
+      <li><a href="about.html">درباره ما</a></li>
+      <li><a href="menu.html">منو</a></li>
+      <li><a href="blog.html" class="active">وبلاگ</a></li>
+      <li><a href="contact.html">تماس</a></li>
+      <li><a href="reservation.html" class="nav-cta">رزرو میز</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="منو" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-mobile">
+    <a href="index.html">خانه</a>
+    <a href="about.html">درباره ما</a>
+    <a href="menu.html">منو</a>
+    <a href="blog.html" class="active">وبلاگ</a>
+    <a href="contact.html">تماس</a>
+    <a href="reservation.html">رزرو میز</a>
+  </div>
+
+  <main>
+
+    <!-- ══ هدر ══ -->
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <div class="badge">✦ دنیای قهوه ✦</div>
+        <h1>وبلاگ <span>کافه آرا</span></h1>
+        <p>راهنما، دستور پخت، داستان‌های پشت صحنه و همه چیز درباره دنیای قهوه و آشپزی.</p>
+        <div class="breadcrumb">
+          <a href="index.html">خانه</a><i>←</i><span>وبلاگ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ محتوای اصلی ══ -->
+    <section class="section blog-section">
+      <div class="container">
+        <div class="blog-layout">
+
+          <!-- مقالات -->
+          <div class="blog-main">
+
+            <!-- سرچ + فیلتر -->
+            <div class="blog-controls" data-reveal>
+              <div class="bs-search">
+                <span class="bs-icon">🔍</span>
+                <input type="text" id="blogSearch" placeholder="جستجو در مقالات...">
+              </div>
+              <div class="bs-sort">
+                <select id="blogSort">
+                  <option value="newest">جدیدترین</option>
+                  <option value="oldest">قدیمی‌ترین</option>
+                  <option value="popular">محبوب‌ترین</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- تب دسته‌بندی -->
+            <div class="blog-cats" data-reveal data-delay="60">
+              <button class="bc-tab active" data-cat="all">همه</button>
+              <button class="bc-tab" data-cat="coffee">☕ قهوه</button>
+              <button class="bc-tab" data-cat="recipe">🍳 دستور پخت</button>
+              <button class="bc-tab" data-cat="lifestyle">🌿 سبک زندگی</button>
+              <button class="bc-tab" data-cat="news">📢 اخبار</button>
+            </div>
+
+            <!-- مقاله ویژه -->
+            <div class="featured-post" data-cat="coffee" data-reveal data-delay="80">
+              <div class="fp-img fi-1">☕</div>
+              <div class="fp-body">
+                <div class="fp-meta">
+                  <span class="fp-cat">☕ قهوه</span>
+                  <span class="fp-date">۱۵ خرداد ۱۴۰۳</span>
+                  <span class="fp-read">۸ دقیقه مطالعه</span>
+                </div>
+                <h2 class="fp-title">راهنمای کامل قهوه اسپشیالتی — از مزرعه تا فنجان</h2>
+                <p class="fp-desc">همه چیز درباره قهوه اسپشیالتی — از انتخاب دانه، روش فرآوری، رست کردن تا دم‌آوری درست. اگر می‌خواهید بهترین قهوه زندگیتان را بنوشید، این مقاله را از دست ندهید.</p>
+                <div class="fp-footer">
+                  <div class="fp-author">
+                    <div class="fpa-ava" style="background:#5c3d1e">ن</div>
+                    <span>نیما کریمی — سرباریستا</span>
+                  </div>
+                  <a href="blog-single.html" class="btn btn-primary">خواندن مقاله ←</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- گرید مقالات -->
+            <div class="posts-grid" id="postsGrid">
+
+              <article class="post-card" data-cat="recipe" data-reveal>
+                <a href="blog-single.html" class="pc-img-wrap">
+                  <div class="pc-img pi-1">🍫</div>
+                  <span class="pc-cat">دستور پخت</span>
+                </a>
+                <div class="pc-body">
+                  <div class="pc-meta"><span>۲۸ اردیبهشت ۱۴۰۳</span><span>۵ دقیقه</span></div>
+                  <h3 class="pc-title">طرز تهیه موس شکلات تلخ — دستور آشپز کافه آرا</h3>
+                  <p class="pc-desc">راز خامه‌ای و سبک شدن موس شکلات را از آشپز حرفه‌ای ما بیاموزید.</p>
+                  <div class="pc-footer">
+                    <div class="pc-author">
+                      <div class="pca-ava" style="background:#1a3d2a">س</div>
+                      <span>سارا محمدی</span>
+                    </div>
+                    <div class="pc-likes" data-likes="48"><span>❤️</span><span class="likes-count">۴۸</span></div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="post-card" data-cat="lifestyle" data-reveal data-delay="60">
+                <a href="blog-single.html" class="pc-img-wrap">
+                  <div class="pc-img pi-2">🌿</div>
+                  <span class="pc-cat">سبک زندگی</span>
+                </a>
+                <div class="pc-body">
+                  <div class="pc-meta"><span>۵ خرداد ۱۴۰۳</span><span>۶ دقیقه</span></div>
+                  <h3 class="pc-title">چرا صبحانه مهم‌ترین وعده غذایی روز شماست؟</h3>
+                  <p class="pc-desc">نگاهی علمی به تأثیر صبحانه سالم بر عملکرد ذهنی و جسمی در طول روز.</p>
+                  <div class="pc-footer">
+                    <div class="pc-author">
+                      <div class="pca-ava" style="background:#1a3d2a">س</div>
+                      <span>سارا محمدی</span>
+                    </div>
+                    <div class="pc-likes" data-likes="62"><span>❤️</span><span class="likes-count">۶۲</span></div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="post-card" data-cat="coffee" data-reveal data-delay="120">
+                <a href="blog-single.html" class="pc-img-wrap">
+                  <div class="pc-img pi-3">🫧</div>
+                  <span class="pc-cat">قهوه</span>
+                </a>
+                <div class="pc-body">
+                  <div class="pc-meta"><span>۲۰ اردیبهشت ۱۴۰۳</span><span>۷ دقیقه</span></div>
+                  <h3 class="pc-title">تفاوت اسپرسو، فیلتر و کلد‌برو — کدام مناسب شماست؟</h3>
+                  <p class="pc-desc">راهنمای جامع برای کسانی که می‌خواهند قهوه درست را انتخاب کنند.</p>
+                  <div class="pc-footer">
+                    <div class="pc-author">
+                      <div class="pca-ava" style="background:#5c3d1e">ن</div>
+                      <span>نیما کریمی</span>
+                    </div>
+                    <div class="pc-likes" data-likes="91"><span>❤️</span><span class="likes-count">۹۱</span></div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="post-card" data-cat="news" data-reveal data-delay="0">
+                <a href="blog-single.html" class="pc-img-wrap">
+                  <div class="pc-img pi-4">🎉</div>
+                  <span class="pc-cat">اخبار</span>
+                </a>
+                <div class="pc-body">
+                  <div class="pc-meta"><span>۱۰ فروردین ۱۴۰۳</span><span>۳ دقیقه</span></div>
+                  <h3 class="pc-title">افتتاح شعبه جدید کافه آرا در نیاوران</h3>
+                  <p class="pc-desc">با خوشحالی از افتتاح دومین شعبه کافه آرا در منطقه زیبای نیاوران خبر می‌دهیم.</p>
+                  <div class="pc-footer">
+                    <div class="pc-author">
+                      <div class="pca-ava" style="background:#c8922a">آ</div>
+                      <span>آرش رضایی</span>
+                    </div>
+                    <div class="pc-likes" data-likes="134"><span>❤️</span><span class="likes-count">۱۳۴</span></div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="post-card" data-cat="recipe" data-reveal data-delay="60">
+                <a href="blog-single.html" class="pc-img-wrap">
+                  <div class="pc-img pi-5">🥐</div>
+                  <span class="pc-cat">دستور پخت</span>
+                </a>
+                <div class="pc-body">
+                  <div class="pc-meta"><span>۱ فروردین ۱۴۰۳</span><span>۱۰ دقیقه</span></div>
+                  <h3 class="pc-title">طرز تهیه کروسان فرانسوی در خانه — گام به گام</h3>
+                  <p class="pc-desc">با این دستور می‌توانید کروسان‌های پفکی و ترد مثل نانوایی‌های پاریس بپزید.</p>
+                  <div class="pc-footer">
+                    <div class="pc-author">
+                      <div class="pca-ava" style="background:#1a3d2a">س</div>
+                      <span>سارا محمدی</span>
+                    </div>
+                    <div class="pc-likes" data-likes="77"><span>❤️</span><span class="likes-count">۷۷</span></div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="post-card" data-cat="lifestyle" data-reveal data-delay="120">
+                <a href="blog-single.html" class="pc-img-wrap">
+                  <div class="pc-img pi-6">📚</div>
+                  <span class="pc-cat">سبک زندگی</span>
+                </a>
+                <div class="pc-body">
+                  <div class="pc-meta"><span>۲۵ اسفند ۱۴۰۲</span><span>۵ دقیقه</span></div>
+                  <h3 class="pc-title">کافه به‌عنوان دفتر کار — چطور بهره‌وری داشته باشیم؟</h3>
+                  <p class="pc-desc">نکاتی برای کسانی که دوست دارند در فضای کافه کار کنند و بیشترین بهره‌وری را داشته باشند.</p>
+                  <div class="pc-footer">
+                    <div class="pc-author">
+                      <div class="pca-ava" style="background:#3d1a3d">ل</div>
+                      <span>لیلا عباسی</span>
+                    </div>
+                    <div class="pc-likes" data-likes="55"><span>❤️</span><span class="likes-count">۵۵</span></div>
+                  </div>
+                </div>
+              </article>
+
+            </div><!-- /posts-grid -->
+
+            <!-- پیام خالی -->
+            <div class="blog-empty" id="blogEmpty" style="display:none">
+              <div class="be-icon">🔍</div>
+              <div class="be-title">مقاله‌ای یافت نشد</div>
+              <div class="be-desc">دسته‌بندی دیگری امتحان کنید یا جستجو را تغییر دهید.</div>
+            </div>
+
+            <!-- پیجینیشن -->
+            <div class="pagination" data-reveal>
+              <button class="pg-btn pg-prev" disabled>→</button>
+              <button class="pg-btn pg-num active">۱</button>
+              <button class="pg-btn pg-num">۲</button>
+              <button class="pg-btn pg-num">۳</button>
+              <span class="pg-dots">...</span>
+              <button class="pg-btn pg-num">۸</button>
+              <button class="pg-btn pg-next">←</button>
+            </div>
+
+          </div><!-- /blog-main -->
+
+          <!-- سایدبار -->
+          <aside class="blog-sidebar">
+
+            <!-- جستجو -->
+            <div class="sb-card" data-reveal>
+              <h3 class="sb-title">جستجو</h3>
+              <div class="sb-search">
+                <input type="text" id="sbSearch" placeholder="جستجو...">
+                <button id="sbSearchBtn">🔍</button>
+              </div>
+            </div>
+
+            <!-- دسته‌بندی‌ها -->
+            <div class="sb-card" data-reveal data-delay="60">
+              <h3 class="sb-title">دسته‌بندی‌ها</h3>
+              <ul class="sb-cats">
+                <li><a href="#" data-cat="all"><span>📋 همه مقالات</span><span class="sc-count">۱۶</span></a></li>
+                <li><a href="#" data-cat="coffee"><span>☕ قهوه</span><span class="sc-count">۶</span></a></li>
+                <li><a href="#" data-cat="recipe"><span>🍳 دستور پخت</span><span class="sc-count">۴</span></a></li>
+                <li><a href="#" data-cat="lifestyle"><span>🌿 سبک زندگی</span><span class="sc-count">۳</span></a></li>
+                <li><a href="#" data-cat="news"><span>📢 اخبار</span><span class="sc-count">۳</span></a></li>
+              </ul>
+            </div>
+
+            <!-- محبوب‌ترین -->
+            <div class="sb-card" data-reveal data-delay="120">
+              <h3 class="sb-title">محبوب‌ترین</h3>
+              <div class="popular-posts">
+                <a href="blog-single.html" class="pp-item">
+                  <div class="pp-img pp-i1">📢</div>
+                  <div class="pp-body">
+                    <div class="pp-title">افتتاح شعبه جدید کافه آرا در نیاوران</div>
+                    <div class="pp-meta">❤️ ۱۳۴ • ۳ دقیقه</div>
+                  </div>
+                </a>
+                <a href="blog-single.html" class="pp-item">
+                  <div class="pp-img pp-i2">☕</div>
+                  <div class="pp-body">
+                    <div class="pp-title">تفاوت اسپرسو، فیلتر و کلد‌برو</div>
+                    <div class="pp-meta">❤️ ۹۱ • ۷ دقیقه</div>
+                  </div>
+                </a>
+                <a href="blog-single.html" class="pp-item">
+                  <div class="pp-img pp-i3">🌿</div>
+                  <div class="pp-body">
+                    <div class="pp-title">چرا صبحانه مهم‌ترین وعده روز شماست؟</div>
+                    <div class="pp-meta">❤️ ۶۲ • ۶ دقیقه</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- تگ‌ها -->
+            <div class="sb-card" data-reveal data-delay="180">
+              <h3 class="sb-title">تگ‌ها</h3>
+              <div class="tags-cloud">
+                <a href="#" class="tag">قهوه</a><a href="#" class="tag">اسپرسو</a>
+                <a href="#" class="tag">صبحانه</a><a href="#" class="tag">دستور پخت</a>
+                <a href="#" class="tag">شکلات</a><a href="#" class="tag">باریستا</a>
+                <a href="#" class="tag">کروسان</a><a href="#" class="tag">لاته</a>
+                <a href="#" class="tag">سبک زندگی</a><a href="#" class="tag">تغذیه</a>
+                <a href="#" class="tag">ماچا</a><a href="#" class="tag">کلد‌برو</a>
+              </div>
+            </div>
+
+            <!-- خبرنامه -->
+            <div class="sb-card sb-newsletter" data-reveal data-delay="240">
+              <div class="sbn-icon">✉️</div>
+              <h3>عضو خبرنامه شوید</h3>
+              <p>مقالات جدید مستقیم در ایمیل شما</p>
+              <input type="email" id="sbEmail" placeholder="ایمیل شما...">
+              <button id="sbSubBtn" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:10px">
+                عضویت رایگان
+              </button>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ فوتر ══ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="f-logo">کافه <span>آرا</span></span>
+        <p>جایی که هر لحظه با عطر قهوه تازه و غذای اصیل معنا پیدا می‌کند.</p>
+        <div class="footer-social">
+          <a href="#" class="f-soc">📸</a><a href="#" class="f-soc">✈️</a>
+          <a href="#" class="f-soc">💬</a><a href="#" class="f-soc">🐦</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>دسترسی سریع</h4><ul>
+        <li><a href="index.html">خانه</a></li><li><a href="about.html">درباره ما</a></li>
+        <li><a href="menu.html">منوی کامل</a></li><li><a href="reservation.html">رزرو میز</a></li>
+        <li><a href="blog.html">وبلاگ</a></li><li><a href="contact.html">تماس</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>خدمات</h4><ul>
+        <li><a href="#">سفارش آنلاین</a></li><li><a href="#">تحویل درب منزل</a></li>
+        <li><a href="#">مجالس خصوصی</a></li><li><a href="#">کیترینگ</a></li>
+        <li><a href="#">هدیه کارت</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>تماس با ما</h4><ul>
+        <li><a href="tel:02188123456">۰۲۱-۸۸۱۲۳۴۵۶</a></li>
+        <li><a href="mailto:info@cafeara.ir">info@cafeara.ir</a></li>
+        <li><a href="contact.html">ولیعصر، پلاک ۱۲۳</a></li>
+        <li><a href="contact.html">شعبه نیاوران</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="currentYear">۱۴۰۳</span> کافه آرا — تمامی حقوق محفوظ است</p>
+      <div class="footer-bottom-links">
+        <a href="#">حریم خصوصی</a><a href="#">قوانین</a><a href="#">نقشه سایت</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="float-btn" onclick="location.href='menu.html'">
+    🛒 سفارش آنلاین <span class="fb-badge">جدید</span>
+  </button>
+  <button id="backToTop" style="position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--brown);color:#fff;border:none;font-size:1.1rem;z-index:500;opacity:0;transition:all .3s;box-shadow:var(--shadow-dark)">↑</button>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/blog.js"></script>
+</body>
+</html>

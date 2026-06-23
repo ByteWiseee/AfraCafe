@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="رزرو میز کافه آرا — همین حالا میز مورد نظر خود را رزرو کنید">
+  <title>کافه آرا | رزرو میز</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/reservation.css">
+</head>
+<body>
+
+  <!-- ══ ناوبار ══ -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">کافه <span>آرا</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">خانه</a></li>
+      <li><a href="about.html">درباره ما</a></li>
+      <li><a href="menu.html">منو</a></li>
+      <li><a href="blog.html">وبلاگ</a></li>
+      <li><a href="contact.html">تماس</a></li>
+      <li><a href="reservation.html" class="nav-cta active">رزرو میز</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="منو" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-mobile">
+    <a href="index.html">خانه</a>
+    <a href="about.html">درباره ما</a>
+    <a href="menu.html">منو</a>
+    <a href="blog.html">وبلاگ</a>
+    <a href="contact.html">تماس</a>
+    <a href="reservation.html" class="active">رزرو میز</a>
+  </div>
+
+  <main>
+
+    <!-- ══ هدر ══ -->
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <div class="badge">✦ رزرو آنلاین ✦</div>
+        <h1>میز خود را <span>رزرو کنید</span></h1>
+        <p>یک شب به‌یادماندنی برنامه‌ریزی کنید. تأیید رزرو در کمتر از ۲ ساعت.</p>
+        <div class="breadcrumb">
+          <a href="index.html">خانه</a><i>←</i><span>رزرو میز</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ مزایا ══ -->
+    <div class="perks-band">
+      <div class="container">
+        <div class="perks-grid">
+          <div class="perk-item" data-reveal>
+            <span class="pk-icon">🥂</span>
+            <div class="pk-title">خوش‌آمد ویژه</div>
+            <div class="pk-desc">نوشیدنی رایگان برای میزهای رزرو‌شده</div>
+          </div>
+          <div class="perk-item" data-reveal data-delay="80">
+            <span class="pk-icon">🎂</span>
+            <div class="pk-title">مناسبت‌های خاص</div>
+            <div class="pk-desc">تزئین ویژه برای تولد و سالگرد</div>
+          </div>
+          <div class="perk-item" data-reveal data-delay="160">
+            <span class="pk-icon">🔒</span>
+            <div class="pk-title">تضمین میز</div>
+            <div class="pk-desc">میز شما ۱۵ دقیقه نگه داشته می‌شود</div>
+          </div>
+          <div class="perk-item" data-reveal data-delay="240">
+            <span class="pk-icon">📱</span>
+            <div class="pk-title">تأیید پیامکی</div>
+            <div class="pk-desc">تأیید رزرو از طریق SMS و واتساپ</div>
+          </div>
+          <div class="perk-item" data-reveal data-delay="320">
+            <span class="pk-icon">🍽️</span>
+            <div class="pk-title">پیش‌سفارش منو</div>
+            <div class="pk-desc">امکان انتخاب منو از قبل</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ فرم + اطلاعات ══ -->
+    <section class="section res-section">
+      <div class="container">
+        <div class="res-layout">
+
+          <!-- فرم رزرو -->
+          <div class="res-form-wrap" data-reveal>
+            <div class="rf-header">
+              <span class="section-label">فرم رزرو</span>
+              <h2 class="section-title">اطلاعات رزرو</h2>
+              <p class="section-sub">تمام فیلدهای ستاره‌دار الزامی هستند.</p>
+            </div>
+
+            <!-- استپ‌ها -->
+            <div class="steps-bar">
+              <div class="step active" data-step="1"><span class="step-num">۱</span><span class="step-lbl">مشخصات</span></div>
+              <div class="step-line"></div>
+              <div class="step" data-step="2"><span class="step-num">۲</span><span class="step-lbl">زمان‌بندی</span></div>
+              <div class="step-line"></div>
+              <div class="step" data-step="3"><span class="step-num">۳</span><span class="step-lbl">تأیید</span></div>
+            </div>
+
+            <form id="resForm" novalidate>
+
+              <!-- استپ ۱: مشخصات -->
+              <div class="form-step active" id="step1">
+                <div class="fg-row-2">
+                  <div class="fg">
+                    <label for="r-name">نام و نام خانوادگی <span class="req">*</span></label>
+                    <input type="text" id="r-name" placeholder="علی رضایی" required>
+                    <span class="fe" id="re-name"></span>
+                  </div>
+                  <div class="fg">
+                    <label for="r-phone">شماره موبایل <span class="req">*</span></label>
+                    <input type="tel" id="r-phone" placeholder="۰۹۱۲-۳۴۵-۶۷۸۹" required>
+                    <span class="fe" id="re-phone"></span>
+                  </div>
+                </div>
+                <div class="fg">
+                  <label for="r-email">ایمیل (اختیاری)</label>
+                  <input type="email" id="r-email" placeholder="example@email.com">
+                </div>
+                <div class="fg">
+                  <label for="r-occasion">مناسبت <span class="req">*</span></label>
+                  <div class="occasion-grid" id="occasionGrid">
+                    <button type="button" class="occ-btn active" data-val="normal">🍽️ معمولی</button>
+                    <button type="button" class="occ-btn" data-val="birthday">🎂 تولد</button>
+                    <button type="button" class="occ-btn" data-val="anniversary">💍 سالگرد</button>
+                    <button type="button" class="occ-btn" data-val="business">💼 جلسه کاری</button>
+                    <button type="button" class="occ-btn" data-val="date">💕 قرار ملاقات</button>
+                    <button type="button" class="occ-btn" data-val="other">✨ سایر</button>
+                  </div>
+                  <input type="hidden" id="r-occasion" value="normal">
+                </div>
+                <button type="button" class="btn btn-primary btn-lg step-next" data-to="2">
+                  مرحله بعد ←
+                </button>
+              </div>
+
+              <!-- استپ ۲: زمان‌بندی -->
+              <div class="form-step" id="step2">
+                <div class="fg-row-2">
+                  <div class="fg">
+                    <label for="r-branch">شعبه <span class="req">*</span></label>
+                    <select id="r-branch" required>
+                      <option value="">انتخاب شعبه</option>
+                      <option value="valiasre">شعبه ولیعصر</option>
+                      <option value="niavaran">شعبه نیاوران</option>
+                    </select>
+                    <span class="fe" id="re-branch"></span>
+                  </div>
+                  <div class="fg">
+                    <label for="r-guests">تعداد نفرات <span class="req">*</span></label>
+                    <div class="counter-input">
+                      <button type="button" class="ci-btn" id="guestMinus">−</button>
+                      <span id="guestCount">۲</span>
+                      <button type="button" class="ci-btn" id="guestPlus">+</button>
+                    </div>
+                    <input type="hidden" id="r-guests" value="2">
+                  </div>
+                </div>
+                <div class="fg-row-2">
+                  <div class="fg">
+                    <label for="r-date">تاریخ <span class="req">*</span></label>
+                    <input type="text" id="r-date" placeholder="مثال: ۱۴۰۳/۰۴/۱۵" required>
+                    <span class="fe" id="re-date"></span>
+                  </div>
+                  <div class="fg">
+                    <label>ساعت <span class="req">*</span></label>
+                    <div class="time-slots" id="timeSlots">
+                      <button type="button" class="ts-btn" data-time="12:00">۱۲:۰۰</button>
+                      <button type="button" class="ts-btn" data-time="13:00">۱۳:۰۰</button>
+                      <button type="button" class="ts-btn" data-time="14:00">۱۴:۰۰</button>
+                      <button type="button" class="ts-btn" data-time="18:00">۱۸:۰۰</button>
+                      <button type="button" class="ts-btn" data-time="19:00">۱۹:۰۰</button>
+                      <button type="button" class="ts-btn" data-time="20:00">۲۰:۰۰</button>
+                      <button type="button" class="ts-btn" data-time="21:00">۲۱:۰۰</button>
+                      <button type="button" class="ts-btn ts-full" data-time="22:00" disabled>۲۲:۰۰ پر</button>
+                    </div>
+                    <input type="hidden" id="r-time" value="">
+                    <span class="fe" id="re-time"></span>
+                  </div>
+                </div>
+                <div class="fg">
+                  <label for="r-notes">توضیحات اضافه</label>
+                  <textarea id="r-notes" rows="3"
+                    placeholder="آلرژی غذایی، صندلی کودک، درخواست خاص..."></textarea>
+                </div>
+                <div class="step-btns">
+                  <button type="button" class="btn btn-outline step-prev" data-to="1">← برگشت</button>
+                  <button type="button" class="btn btn-primary btn-lg step-next" data-to="3">
+                    مرحله بعد ←
+                  </button>
+                </div>
+              </div>
+
+              <!-- استپ ۳: تأیید -->
+              <div class="form-step" id="step3">
+                <div class="confirm-card">
+                  <div class="cc-header">
+                    <span>🎉</span>
+                    <h3>خلاصه رزرو شما</h3>
+                  </div>
+                  <div class="cc-rows" id="confirmRows"></div>
+                </div>
+                <div class="fg" style="margin-top:20px">
+                  <label class="check-label">
+                    <input type="checkbox" id="r-agree" required>
+                    <span class="check-box"></span>
+                    <span>با <a href="#">قوانین رزرو</a> موافقم و در صورت لغو ۲۴ ساعت قبل اطلاع می‌دهم</span>
+                  </label>
+                  <span class="fe" id="re-agree"></span>
+                </div>
+                <div class="step-btns">
+                  <button type="button" class="btn btn-outline step-prev" data-to="2">← ویرایش</button>
+                  <button type="submit" class="btn btn-primary btn-lg" id="resSubmit">
+                    <span id="rs-text">ثبت رزرو</span> 🎉
+                  </button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- اطلاعات جانبی -->
+          <div class="res-info" data-reveal data-delay="100">
+
+            <!-- ساعات کاری -->
+            <div class="ri-card">
+              <h3 class="ri-title">⏰ ساعات کاری</h3>
+              <ul class="hours-list">
+                <li><span class="hl-day">شنبه — سه‌شنبه</span><span class="hl-time">۸:۰۰ — ۲۳:۰۰</span></li>
+                <li><span class="hl-day">چهارشنبه — پنجشنبه</span><span class="hl-time">۸:۰۰ — ۲۴:۰۰</span></li>
+                <li><span class="hl-day">جمعه</span><span class="hl-time">۹:۰۰ — ۲۴:۰۰</span></li>
+                <li class="hl-closed"><span class="hl-day">تعطیلات رسمی</span><span>تعطیل</span></li>
+              </ul>
+            </div>
+
+            <!-- قوانین -->
+            <div class="ri-card">
+              <h3 class="ri-title">📋 قوانین رزرو</h3>
+              <ul class="rules-list">
+                <li>رزرو حداقل ۲ ساعت قبل از ورود انجام شود</li>
+                <li>لغو رزرو حداقل ۲۴ ساعت قبل اعلام شود</li>
+                <li>میز ۱۵ دقیقه پس از ساعت رزرو نگه داشته می‌شود</li>
+                <li>برای گروه‌های بالای ۱۰ نفر با ما تماس بگیرید</li>
+                <li>حیوانات خانگی در فضای باز مجاز هستند</li>
+              </ul>
+            </div>
+
+            <!-- تماس سریع -->
+            <div class="ri-card ri-contact">
+              <h3 class="ri-title">📞 تماس سریع</h3>
+              <p>برای رزرو گروهی یا مجالس خصوصی مستقیم با ما تماس بگیرید.</p>
+              <a href="tel:02188123456" class="btn btn-secondary" style="width:100%;justify-content:center;margin-top:14px">
+                📞 ۰۲۱-۸۸۱۲۳۴۵۶
+              </a>
+              <a href="#" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:10px">
+                💬 واتساپ
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ فوتر ══ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="f-logo">کافه <span>آرا</span></span>
+        <p>جایی که هر لحظه با عطر قهوه تازه و غذای اصیل معنا پیدا می‌کند.</p>
+        <div class="footer-social">
+          <a href="#" class="f-soc">📸</a><a href="#" class="f-soc">✈️</a>
+          <a href="#" class="f-soc">💬</a><a href="#" class="f-soc">🐦</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>دسترسی سریع</h4><ul>
+        <li><a href="index.html">خانه</a></li><li><a href="about.html">درباره ما</a></li>
+        <li><a href="menu.html">منوی کامل</a></li><li><a href="reservation.html">رزرو میز</a></li>
+        <li><a href="blog.html">وبلاگ</a></li><li><a href="contact.html">تماس</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>خدمات</h4><ul>
+        <li><a href="#">سفارش آنلاین</a></li><li><a href="#">تحویل درب منزل</a></li>
+        <li><a href="#">مجالس خصوصی</a></li><li><a href="#">کیترینگ</a></li>
+        <li><a href="#">هدیه کارت</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>تماس با ما</h4><ul>
+        <li><a href="tel:02188123456">۰۲۱-۸۸۱۲۳۴۵۶</a></li>
+        <li><a href="mailto:info@cafeara.ir">info@cafeara.ir</a></li>
+        <li><a href="contact.html">ولیعصر، پلاک ۱۲۳</a></li>
+        <li><a href="contact.html">شعبه نیاوران</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="currentYear">۱۴۰۳</span> کافه آرا — تمامی حقوق محفوظ است</p>
+      <div class="footer-bottom-links">
+        <a href="#">حریم خصوصی</a><a href="#">قوانین</a><a href="#">نقشه سایت</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" style="position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--brown);color:#fff;border:none;font-size:1.1rem;z-index:500;opacity:0;transition:all .3s;box-shadow:var(--shadow-dark)">↑</button>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/reservation.js"></script>
+</body>
+</html>

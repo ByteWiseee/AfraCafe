@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="تماس با کافه آرا — آدرس، شماره تلفن، ساعات کاری و فرم تماس">
+  <title>کافه آرا | تماس با ما</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
+</head>
+<body>
+
+  <!-- ══ ناوبار ══ -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">کافه <span>آرا</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">خانه</a></li>
+      <li><a href="about.html">درباره ما</a></li>
+      <li><a href="menu.html">منو</a></li>
+      <li><a href="blog.html">وبلاگ</a></li>
+      <li><a href="contact.html" class="active">تماس</a></li>
+      <li><a href="reservation.html" class="nav-cta">رزرو میز</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="منو" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="nav-mobile">
+    <a href="index.html">خانه</a>
+    <a href="about.html">درباره ما</a>
+    <a href="menu.html">منو</a>
+    <a href="blog.html">وبلاگ</a>
+    <a href="contact.html" class="active">تماس</a>
+    <a href="reservation.html">رزرو میز</a>
+  </div>
+
+  <main>
+
+    <!-- ══ هدر صفحه ══ -->
+    <div class="page-hero">
+      <div class="page-hero-content">
+        <div class="badge">✦ در تماس باشید ✦</div>
+        <h1>همیشه اینجاییم <span>برای شما</span></h1>
+        <p>هر سوال، پیشنهاد یا انتقادی داشتید خوشحال می‌شیم بشنویم. پاسخگوی شما هستیم.</p>
+        <div class="breadcrumb">
+          <a href="index.html">خانه</a><i>←</i><span>تماس با ما</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ اطلاعات سریع ══ -->
+    <div class="quick-info-band">
+      <div class="container">
+        <div class="qi-grid">
+          <div class="qi-item" data-reveal>
+            <div class="qi-icon">📍</div>
+            <div class="qi-title">آدرس شعبه اصلی</div>
+            <div class="qi-desc">تهران، خیابان ولیعصر،<br>بالاتر از میدان ونک، پلاک ۱۲۳</div>
+          </div>
+          <div class="qi-item" data-reveal data-delay="80">
+            <div class="qi-icon">📞</div>
+            <div class="qi-title">تلفن تماس</div>
+            <div class="qi-desc">
+              <a href="tel:02188123456">۰۲۱-۸۸۱۲۳۴۵۶</a><br>
+              <a href="tel:09123456789">۰۹۱۲-۳۴۵-۶۷۸۹</a>
+            </div>
+          </div>
+          <div class="qi-item" data-reveal data-delay="160">
+            <div class="qi-icon">🕐</div>
+            <div class="qi-title">ساعات کاری</div>
+            <div class="qi-desc">شنبه تا پنجشنبه: ۸ تا ۲۳<br>جمعه: ۹ تا ۲۴</div>
+          </div>
+          <div class="qi-item" data-reveal data-delay="240">
+            <div class="qi-icon">✉️</div>
+            <div class="qi-title">ایمیل</div>
+            <div class="qi-desc">
+              <a href="mailto:info@cafeara.ir">info@cafeara.ir</a><br>
+              <a href="mailto:support@cafeara.ir">support@cafeara.ir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ محتوای اصلی ══ -->
+    <section class="section contact-section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- فرم تماس -->
+          <div class="contact-form-wrap" data-reveal>
+            <div class="cf-header">
+              <span class="section-label">پیام بفرستید</span>
+              <h2 class="section-title">با ما صحبت کنید</h2>
+              <p class="section-sub">فرم زیر را پر کنید، در کمتر از ۲۴ ساعت پاسخ می‌دهیم.</p>
+            </div>
+
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="cf-row-2">
+                <div class="cf-group">
+                  <label for="cf-name">نام و نام خانوادگی <span class="req">*</span></label>
+                  <input type="text" id="cf-name" name="name" placeholder="علی رضایی" required>
+                  <span class="cf-error" id="err-name"></span>
+                </div>
+                <div class="cf-group">
+                  <label for="cf-phone">شماره موبایل <span class="req">*</span></label>
+                  <input type="tel" id="cf-phone" name="phone" placeholder="۰۹۱۲-۳۴۵-۶۷۸۹" required>
+                  <span class="cf-error" id="err-phone"></span>
+                </div>
+              </div>
+              <div class="cf-group">
+                <label for="cf-email">ایمیل</label>
+                <input type="email" id="cf-email" name="email" placeholder="example@email.com">
+                <span class="cf-error" id="err-email"></span>
+              </div>
+              <div class="cf-group">
+                <label for="cf-subject">موضوع <span class="req">*</span></label>
+                <select id="cf-subject" name="subject" required>
+                  <option value="">موضوع پیام را انتخاب کنید</option>
+                  <option value="reservation">رزرو میز</option>
+                  <option value="order">سفارش و تحویل</option>
+                  <option value="feedback">پیشنهاد و انتقاد</option>
+                  <option value="catering">کیترینگ و مجالس</option>
+                  <option value="career">همکاری و استخدام</option>
+                  <option value="other">سایر</option>
+                </select>
+                <span class="cf-error" id="err-subject"></span>
+              </div>
+              <div class="cf-group">
+                <label for="cf-message">پیام شما <span class="req">*</span></label>
+                <textarea id="cf-message" name="message" rows="5"
+                  placeholder="پیام خود را اینجا بنویسید..." required></textarea>
+                <span class="cf-error" id="err-message"></span>
+                <span class="cf-chars"><span id="charCount">۰</span> / ۵۰۰</span>
+              </div>
+              <div class="cf-group cf-check">
+                <label class="check-label">
+                  <input type="checkbox" id="cf-agree" required>
+                  <span class="check-box"></span>
+                  <span>با <a href="#">قوانین و مقررات</a> کافه آرا موافقم</span>
+                </label>
+                <span class="cf-error" id="err-agree"></span>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg cf-submit" id="cfSubmit">
+                <span class="cs-text">ارسال پیام</span>
+                <span class="cs-icon">←</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- اطلاعات تماس + نقشه -->
+          <div class="contact-info" data-reveal data-delay="120">
+
+            <!-- شعبه‌ها -->
+            <div class="branches">
+              <h3 class="ci-title">شعبه‌های ما</h3>
+
+              <div class="branch-card bc-active" id="branch1" data-branch="1">
+                <div class="bc-header">
+                  <div class="bc-dot"></div>
+                  <div>
+                    <div class="bc-name">شعبه ولیعصر <span class="badge badge-gold" style="font-size:.62rem">اصلی</span></div>
+                    <div class="bc-addr">تهران، خیابان ولیعصر، بالاتر از میدان ونک، پلاک ۱۲۳</div>
+                  </div>
+                </div>
+                <div class="bc-details">
+                  <div class="bc-row"><span>📞</span><a href="tel:02188123456">۰۲۱-۸۸۱۲۳۴۵۶</a></div>
+                  <div class="bc-row"><span>🕐</span><span>شنبه تا چهارشنبه: ۸ تا ۲۳ | پنج و جمعه: ۸ تا ۲۴</span></div>
+                  <div class="bc-row"><span>🚇</span><span>نزدیک‌ترین مترو: میدان ونک — خط ۳</span></div>
+                  <div class="bc-row"><span>🚗</span><span>پارکینگ اختصاصی موجود است</span></div>
+                </div>
+              </div>
+
+              <div class="branch-card" id="branch2" data-branch="2">
+                <div class="bc-header">
+                  <div class="bc-dot"></div>
+                  <div>
+                    <div class="bc-name">شعبه نیاوران</div>
+                    <div class="bc-addr">تهران، نیاوران، خیابان باهنر، پلاک ۴۵</div>
+                  </div>
+                </div>
+                <div class="bc-details">
+                  <div class="bc-row"><span>📞</span><a href="tel:02122334455">۰۲۱-۲۲۳۳۴۴۵۵</a></div>
+                  <div class="bc-row"><span>🕐</span><span>شنبه تا چهارشنبه: ۹ تا ۲۲ | پنج و جمعه: ۹ تا ۲۳</span></div>
+                  <div class="bc-row"><span>🌿</span><span>دارای فضای باز و باغ اختصاصی</span></div>
+                  <div class="bc-row"><span>🚗</span><span>پارکینگ رایگان تا ۲ ساعت</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- نقشه -->
+            <div class="map-wrap">
+              <div class="map-tabs">
+                <button class="map-tab active" data-branch="1">شعبه ولیعصر</button>
+                <button class="map-tab" data-branch="2">شعبه نیاوران</button>
+              </div>
+              <div class="map-placeholder" id="mapPlaceholder">
+                <div class="mp-inner">
+                  <div class="mp-icon">🗺️</div>
+                  <div class="mp-name" id="mpName">شعبه ولیعصر</div>
+                  <div class="mp-addr" id="mpAddr">ولیعصر، بالاتر از ونک، پلاک ۱۲۳</div>
+                  <a href="https://maps.google.com" target="_blank" class="btn btn-sm btn-primary" style="margin-top:12px">
+                    باز کردن در نقشه ←
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- شبکه‌های اجتماعی -->
+            <div class="social-wrap">
+              <h3 class="ci-title">ما را دنبال کنید</h3>
+              <div class="social-links">
+                <a href="#" class="sl-item sl-insta">
+                  <span class="sl-icon">📸</span>
+                  <div><div class="sl-name">اینستاگرام</div><div class="sl-handle">@cafeara</div></div>
+                </a>
+                <a href="#" class="sl-item sl-telegram">
+                  <span class="sl-icon">✈️</span>
+                  <div><div class="sl-name">تلگرام</div><div class="sl-handle">@cafeara_official</div></div>
+                </a>
+                <a href="#" class="sl-item sl-whatsapp">
+                  <span class="sl-icon">💬</span>
+                  <div><div class="sl-name">واتساپ</div><div class="sl-handle">۰۹۱۲-۳۴۵-۶۷۸۹</div></div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ سوالات متداول ══ -->
+    <section class="section faq-section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="section-label">سوالات متداول</span>
+          <h2 class="section-title light">پاسخ سوال‌های رایج</h2>
+          <p class="section-sub light center">اگر پاسخ سوالتان را اینجا پیدا نکردید، مستقیم با ما تماس بگیرید.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item" data-reveal>
+            <button class="faq-q">آیا امکان رزرو آنلاین وجود دارد؟<span class="faq-arrow">↓</span></button>
+            <div class="faq-a">بله، می‌توانید از طریق صفحه رزرو میز ما، میز مورد نظر را از قبل رزرو کنید. رزرو برای گروه‌های بالای ۶ نفر توصیه می‌شود.</div>
+          </div>
+          <div class="faq-item" data-reveal data-delay="60">
+            <button class="faq-q">آیا تحویل درب منزل دارید؟<span class="faq-arrow">↓</span></button>
+            <div class="faq-a">بله، در شعاع ۵ کیلومتری از هر شعبه تحویل رایگان داریم. برای سفارش‌های بالای ۲۵۰ هزار تومان تحویل کاملاً رایگان است.</div>
+          </div>
+          <div class="faq-item" data-reveal data-delay="120">
+            <button class="faq-q">آیا امکان برگزاری مجلس خصوصی وجود دارد؟<span class="faq-arrow">↓</span></button>
+            <div class="faq-a">بله، هر دو شعبه ما دارای سالن اختصاصی برای مجالس خصوصی هستند. ظرفیت شعبه ولیعصر تا ۴۰ نفر و شعبه نیاوران تا ۶۰ نفر است. با ما تماس بگیرید.</div>
+          </div>
+          <div class="faq-item" data-reveal data-delay="180">
+            <button class="faq-q">آیا منوی گیاهی (وگان) دارید؟<span class="faq-arrow">↓</span></button>
+            <div class="faq-a">بله، بخش مستقلی از منوی ما به گزینه‌های وگان و گیاه‌خوار اختصاص دارد. تمامی آیتم‌های گیاهی با علامت 🌿 مشخص شده‌اند.</div>
+          </div>
+          <div class="faq-item" data-reveal data-delay="240">
+            <button class="faq-q">آیا کارت هدیه دارید؟<span class="faq-arrow">↓</span></button>
+            <div class="faq-a">بله، کارت هدیه کافه آرا در مقادیر ۱۰۰، ۲۵۰، ۵۰۰ هزار و ۱ میلیون تومان موجود است. کارت‌ها در هر دو شعبه قابل استفاده‌اند.</div>
+          </div>
+          <div class="faq-item" data-reveal data-delay="300">
+            <button class="faq-q">آیا امکان استخدام وجود دارد؟<span class="faq-arrow">↓</span></button>
+            <div class="faq-a">ما همیشه به دنبال افراد پرانرژی و علاقه‌مند به قهوه و آشپزی هستیم. رزومه خود را به آدرس careers@cafeara.ir ارسال کنید.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ فوتر ══ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="f-logo">کافه <span>آرا</span></span>
+        <p>جایی که هر لحظه با عطر قهوه تازه و غذای اصیل معنا پیدا می‌کند.</p>
+        <div class="footer-social">
+          <a href="#" class="f-soc">📸</a><a href="#" class="f-soc">✈️</a>
+          <a href="#" class="f-soc">💬</a><a href="#" class="f-soc">🐦</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>دسترسی سریع</h4><ul>
+        <li><a href="index.html">خانه</a></li>
+        <li><a href="about.html">درباره ما</a></li>
+        <li><a href="menu.html">منوی کامل</a></li>
+        <li><a href="reservation.html">رزرو میز</a></li>
+        <li><a href="blog.html">وبلاگ</a></li>
+        <li><a href="contact.html">تماس با ما</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>خدمات</h4><ul>
+        <li><a href="#">سفارش آنلاین</a></li>
+        <li><a href="#">تحویل درب منزل</a></li>
+        <li><a href="#">مجالس خصوصی</a></li>
+        <li><a href="#">کیترینگ</a></li>
+        <li><a href="#">هدیه کارت</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>تماس با ما</h4><ul>
+        <li><a href="tel:02188123456">۰۲۱-۸۸۱۲۳۴۵۶</a></li>
+        <li><a href="mailto:info@cafeara.ir">info@cafeara.ir</a></li>
+        <li><a href="contact.html">ولیعصر، پلاک ۱۲۳</a></li>
+        <li><a href="contact.html">شعبه نیاوران</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="currentYear">۱۴۰۳</span> کافه آرا — تمامی حقوق محفوظ است</p>
+      <div class="footer-bottom-links">
+        <a href="#">حریم خصوصی</a><a href="#">قوانین</a><a href="#">نقشه سایت</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="float-btn" onclick="location.href='menu.html'">
+    🛒 سفارش آنلاین <span class="fb-badge">جدید</span>
+  </button>
+  <button id="backToTop" style="position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--brown);color:#fff;border:none;font-size:1.1rem;z-index:500;opacity:0;transition:all .3s;box-shadow:var(--shadow-dark)">↑</button>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/contact.js"></script>
+</body>
+</html>
